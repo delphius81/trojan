@@ -1,7 +1,7 @@
 /*
  * This file is part of the trojan project.
  * Trojan is an unidentifiable mechanism that helps you bypass GFW.
- * Copyright (C) 2017-2019  GreaterFire
+ * Copyright (C) 2017-2020  The Trojan Authors.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ int TrojanRequest::parse(const string &data) {
     return data.length();
 }
 
-std::string TrojanRequest::generate(const std::string &password, const std::string &domainname, uint16_t port, bool tcp) {
+string TrojanRequest::generate(const string &password, const string &domainname, uint16_t port, bool tcp) {
     string ret = password + "\r\n";
     if (tcp) {
         ret += '\x01';
